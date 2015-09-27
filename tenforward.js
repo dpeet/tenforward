@@ -26,26 +26,28 @@ if (Meteor.isClient) {
 
     Template.buttons.events({
         'click .lightson': function () {
-            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')){
-                //Meteor.call('azureon')
+            if (Meteor.userId() == ('ev4zW7fnbSE8QkPRe')){
+                console.log("Calling");
+                Meteor.call('azureon')
             }
-            console.log(Meteor.userId());
+            //console.log(Meteor.userId());
             toastr.success("Turning Lights On", "Lights On");
         },
         'click .lightsoff': function () {
-            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')) {
-                //Meteor.call('azureoff')
+            if (Meteor.userId() == ('ev4zW7fnbSE8QkPRe')) {
+                console.log("Calling");
+                Meteor.call('azureoff')
             }
             toastr.success("Turning Lights Off", "Lights Off");
         },
         'click .theatre': function () {
-            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')) {
+            if (Meteor.userId() == ('ckvHvi9g6FPAm8DeQ')) {
                 //Meteor.call('azureon')
             }
             toastr.success("Entering Theatre Mode", "Game on!");
         },
         'click .bed': function () {
-            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')) {
+            if (Meteor.userId() == ('ckvHvi9g6FPAm8DeQ')) {
                 //Meteor.call('azureon')
             }
             toastr.success("Bed Time", "Sleep Well!");
@@ -66,7 +68,7 @@ if (Meteor.isServer) {
 
     Meteor.methods({
         azureoff: function() {
-            var cmd = "python /Users/bearb/Dropbox/Projects/meteor/tenforward/azuremsgoff.py";
+            var cmd = "python F:/Dropbox/Projects/meteor/tenforward/azuremsgoff.py";
             exec(cmd, Meteor.bindEnvironment(
                 function (error, stdout, stderr) {
                     if (error) {
@@ -92,7 +94,7 @@ if (Meteor.isServer) {
     });
     Meteor.methods({
         azureon: function() {
-            var cmd = "python /Users/bearb/Dropbox/Projects/meteor/tenforward/azuremsgon.py";
+            var cmd = "python F://Dropbox/Projects/meteor/tenforward/azuremsgon.py";
             exec(cmd, Meteor.bindEnvironment(
                 function (error, stdout, stderr) {
                     if (error) {
