@@ -36,5 +36,8 @@
     margin-right: auto;
     /*white-space: normal*/
     height: 30vh;
-    width: 20vw;
+    width: 40vw;
+    font-size: 2.25em;
+    font-weight: bold;
+
 }
