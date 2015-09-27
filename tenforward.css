@@ -1,0 +1,30 @@
+/* CSS declarations go here */
+body {
+background-color: #66CCFF;
+}
+
+h1 {
+    text-align:center;
+    background-color: black;
+    color: white;
+    font-size: 150%;
+}
+
+h2 {
+    text-alight: left;
+    color: black;
+    font-size: 125%;
+}
+
+li {
+    list-style-type: none;
+    background-color: #E0E0D1;
+    padding: 10px;
+    margin: 10px;
+}
+
+button {
+    background-color: white;
+    height: 20%;
+    width: 45%;
+}

@@ -1,0 +1,31 @@
+<head>
+  <title>tenforward</title>
+</head>
+
+<body>
+  <h1>App Title</h1>
+  {{> hello}}
+  <li>
+    <h2>Item 1</h2>
+    <button type="button" onclick="alert('On button pressed!')"> On </button>
+    <button type="button" onclick="alert('Off button pressed!')"> Off </button>
+  </li>
+  <li>
+      <h2>Item 2</h2>
+      <button type="button" onclick="alert('On button pressed!')"> On </button>
+      <button type="button" onclick="alert('Off button pressed!')"> Off </button>
+  </li>
+  <li>
+      <h2>Item 3</h2>
+      <button type="button" onclick="alert('On button pressed!')"> On </button>
+      <button type="button" onclick="alert('Off button pressed!')"> Off </button>
+  </li>
+
+</body>
+
+<template name="hello">
+    <!--<input type="button" class="execpython" value="Run Python">-->
+
+    {{Stdout}}
+    {{Stderr}}
+</template>
