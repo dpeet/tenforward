@@ -1,5 +1,5 @@
 <head>
-  <title>Ten Forward</title>
+    <title>Ten Forward</title>
 </head>
 
 <body>
@@ -10,39 +10,24 @@
         </div>
     </div>
 </nav>
-  <!--<h1>Ten Forward</h1>-->
-  {{> buttons}}
-  <!--<li>-->
-    <!--<h2>Item 1</h2>-->
-    <!--<button type="button" onclick="alert('On button pressed!')"> On </button>-->
-    <!--<button type="button" onclick="alert('Off button pressed!')"> Off </button>-->
-  <!--</li>-->
-  <!--<li>-->
-      <!--<h2>Item 2</h2>-->
-      <!--<button type="button" onclick="alert('On button pressed!')"> On </button>-->
-      <!--<button type="button" onclick="alert('Off button pressed!')"> Off </button>-->
-  <!--</li>-->
-  <!--<li>-->
-      <!--<h2>Item 3</h2>-->
-      <!--<button type="button" onclick="alert('On button pressed!')"> On </button>-->
-      <!--<button type="button" onclick="alert('Off button pressed!')"> Off </button>-->
-  <!--</li>-->
 
 </body>
 
 <template name="buttons">
-    <!--<div class="container">-->
-        <div class="col-xs-3 col-xs-offset-1">
-            <button class="btn btn-default btn-raised btn-primary lightson">Lights On</button>
-            </div>
-        <div class="col-xs-3 col-xs-offset-2">
-            <button class="btn btn-default btn-raised btn-primary lightsoff">Lights Off</button>
-        </div>
-        <div class="col-xs-3 col-xs-offset-1">
-            <button class="btn btn-default btn-raised btn-primary theatre">Home Theatre</button>
-            </div>
-        <div class="col-xs-3 col-xs-offset-2">
-            <button class="btn btn-default btn-raised btn-primary bed">Bedtime</button>
-        </div>
-    <!--</div>-->
+    <div class="col-xs-3 col-xs-offset-1">
+        <button class="btn btn-default btn-raised btn-primary lightson">Lights On</button>
+    </div>
+    <div class="col-xs-3 col-xs-offset-2">
+        <button class="btn btn-default btn-raised btn-primary lightsoff">Lights Off</button>
+    </div>
+    <div class="col-xs-3 col-xs-offset-1">
+        <button class="btn btn-default btn-raised btn-primary theatre">Home Theatre</button>
+    </div>
+    <div class="col-xs-3 col-xs-offset-2">
+        <button class="btn btn-default btn-raised btn-primary bed">Bedtime</button>
+    </div>
+</template>
+
+<template name="loginpage">
+    {{> loginButtons}}
 </template>

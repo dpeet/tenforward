@@ -26,23 +26,33 @@ if (Meteor.isClient) {
 
     Template.buttons.events({
         'click .lightson': function () {
-            //Meteor.call('azureon')
+            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')){
+                //Meteor.call('azureon')
+            }
+            console.log(Meteor.userId());
             toastr.success("Turning Lights On", "Lights On");
         },
         'click .lightsoff': function () {
-            //Meteor.call('azureoff')
+            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')) {
+                //Meteor.call('azureoff')
+            }
             toastr.success("Turning Lights Off", "Lights Off");
         },
         'click .theatre': function () {
-            //Meteor.call('azureon')
+            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')) {
+                //Meteor.call('azureon')
+            }
             toastr.success("Entering Theatre Mode", "Game on!");
         },
         'click .bed': function () {
-            //Meteor.call('azureon')
+            if (Meteor.userId() === ('ckvHvi9g6FPAm8DeQ')) {
+                //Meteor.call('azureon')
+            }
             toastr.success("Bed Time", "Sleep Well!");
         }
     })
 }
+
 
 if (Meteor.isServer) {
     Meteor.publish('stdout', function () {
@@ -107,4 +117,11 @@ if (Meteor.isServer) {
         }
     });
 }
+
+Router.route('/', function () {
+    this.render('buttons');
+});
+
+Router.route('/loginpage');
+
 
