@@ -1,43 +1,50 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 
-# Folder config file
-Desktop.ini
+*.iml
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+*.floo*
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
+.meteor/
 
-# Windows shortcuts
-*.lnk
+## Directory-based project format:
+.idea/
+# if you remove the above rule, at least ignore the following:
 
-# =========================
-# Operating System Files
-# =========================
+# User-specific stuff:
+# .idea/workspace.xml
+# .idea/tasks.xml
+# .idea/dictionaries
 
-# OSX
-# =========================
+# Sensitive or high-churn files:
+# .idea/dataSources.ids
+# .idea/dataSources.xml
+# .idea/sqlDataSources.xml
+# .idea/dynamic.xml
+# .idea/uiDesigner.xml
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# Gradle:
+# .idea/gradle.xml
+# .idea/libraries
 
-# Thumbnails
-._*
+# Mongo Explorer plugin:
+# .idea/mongoSettings.xml
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
+## File-based project format:
+*.ipr
+*.iws
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
