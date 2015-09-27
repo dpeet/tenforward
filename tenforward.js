@@ -3,13 +3,45 @@ Stdout = new Mongo.Collection('stdout');
 Stderr = new Mongo.Collection('stderr');
 
 if (Meteor.isClient) {
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "1250",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
     Meteor.subscribe('stdout');
     Meteor.subscribe('stderr');
-    Template.hello.events({
-        'click .execpython': function () {
-            Meteor.call('consoleExecSync')
+
+    Template.buttons.events({
+        'click .lightson': function () {
+            //Meteor.call('azureon')
+            toastr.success("Turning Lights On", "Lights On");
+        },
+        'click .lightsoff': function () {
+            //Meteor.call('azureoff')
+            toastr.success("Turning Lights Off", "Lights Off");
+        },
+        'click .theatre': function () {
+            //Meteor.call('azureon')
+            toastr.success("Entering Theatre Mode", "Game on!");
+        },
+        'click .bed': function () {
+            //Meteor.call('azureon')
+            toastr.success("Bed Time", "Sleep Well!");
         }
-    });
+    })
 }
 
 if (Meteor.isServer) {
@@ -23,8 +55,34 @@ if (Meteor.isServer) {
     exec = Npm.require('child_process').exec;
 
     Meteor.methods({
-        consoleExecSync: function() {
-            var cmd = "python /Users/bearb/Dropbox/Projects/meteor/tenforward/azuremsg.py";
+        azureoff: function() {
+            var cmd = "python /Users/bearb/Dropbox/Projects/meteor/tenforward/azuremsgoff.py";
+            exec(cmd, Meteor.bindEnvironment(
+                function (error, stdout, stderr) {
+                    if (error) {
+                        throw new Meteor.Error(error, error);
+                    }
+                    if (stdout) {
+                        Stdout.insert({
+                            timestamp: new Date().getTime(),
+                            data: stdout
+                        });
+                    }
+                    if (stderr) {
+                        Stderr.insert({
+                            timestamp: new Date().getTime(),
+                            data: stderr
+                        });
+                    }
+                    console.log(stderr);
+                    console.log(stdout)
+                }
+            ));
+        }
+    });
+    Meteor.methods({
+        azureon: function() {
+            var cmd = "python /Users/bearb/Dropbox/Projects/meteor/tenforward/azuremsgon.py";
             exec(cmd, Meteor.bindEnvironment(
                 function (error, stdout, stderr) {
                     if (error) {
@@ -49,29 +107,4 @@ if (Meteor.isServer) {
         }
     });
 }
-
-
-//if (Meteor.isClient) {
-//  // counter starts at 0
-//  Session.setDefault('counter', 0);
-//
-//  Template.hello.helpers({
-//    counter: function () {
-//      return Session.get('counter');
-//    }
-//  });
-//
-//  Template.hello.events({
-//    'click button': function () {
-//      // increment the counter when button is clicked
-//      Session.set('counter', Session.get('counter') + 1);
-//    }
-//  });
-//}
-//
-//if (Meteor.isServer) {
-//  Meteor.startup(function () {
-//    // code to run on server at startup
-//  });
-//}
 
