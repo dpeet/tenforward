@@ -1,0 +1,7 @@
+http://www.instructables.com/id/Use-RPi-Azure-and-Cortana-to-Automate-your-Home/?ALLSTEPS
+https://github.com/Azure/azure-sdk-for-python
+http://azure-sdk-for-python.readthedocs.org/en/latest/servicebus.html
+https://bitbucket.org/drushing/themeddlinproject/wiki/Server-side%20Python%20Script%20Execution
+https://forums.meteor.com/t/meteor-python/2563/6
+http://blog.kloud.com.au/2014/10/11/the-internet-of-things-with-arduino-azure-event-hubs-and-the-azure-python-sdk/
+https://azure.microsoft.com/en-us/documentation/articles/service-bus-python-how-to-use-queues/
